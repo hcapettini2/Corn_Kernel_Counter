@@ -108,17 +108,17 @@ def plot_progress(model,dataset,epoch,device,keep_plots = False):
         with torch.no_grad():
             predicted_map  = model.forward(img)
         # Plot the reconstructed image  
-        axs[i].imshow(img[0].numpy().transpose(1, 2, 0))
+        axs[i].imshow(img[0].cpu().numpy().transpose(1, 2, 0))
         #axs[i].set_title(categories[label])
         axs[i].set_xticks([])
         axs[i].set_yticks([])
 
-        axs[i+4].imshow(label[0].numpy())
+        axs[i+4].imshow(label[0].cpu().numpy())
         #axs[i+4].set_title('Reconstructed image')
         axs[i+4].set_xticks([])
         axs[i+4].set_yticks([])
 
-        axs[i+8].imshow(predicted_map[0].numpy().transpose(1, 2, 0))
+        axs[i+8].imshow(predicted_map[0][0].cpu().numpy())#.transpose(1, 2, 0))
         axs[i+8].set_title(f"Map sum= {int(predicted_map[0].sum())}")
         #axs[i+8].set_title('Reconstructed image')
         axs[i+8].set_xticks([])
@@ -150,7 +150,7 @@ def plot_dataset_images_and_masks(dataset):
         axs[i].set_title(f"Real count = {count}")
         axs[i].set_xticks([])
         axs[i].set_yticks([])
-        axs[i+5].imshow(mask.numpy().transpose(1, 2, 0))
+        axs[i+5].imshow(mask[0].numpy())
         #axs[i+5].set_title(f"Map count= {int(mask.sum()/1.)}")
         axs[i+5].set_xticks([])
         axs[i+5].set_yticks([])
@@ -197,7 +197,7 @@ def reconstruct_plot_images_masks(train_features, train_labels, shape,count):
         label = train_labels[idx]#.numpy().transpose(1, 2, 0)
         label = label[None, :]
         label = UP(label)
-        label = label[0].numpy().transpose(1, 2, 0)
+        label = label[0][0].numpy()#.transpose(1, 2, 0)
 
 
         # Plot the reconstructed image
@@ -223,7 +223,7 @@ def Non_reconstruct_plot_images_masks(train_features, train_labels, shape,count)
         idx = elements[i]
         ### Move the images to the right shapes
         img = train_features[idx].numpy().transpose(1, 2, 0)
-        label = train_labels[idx].numpy().transpose(1, 2, 0)
+        label = train_labels[idx][0].numpy()#.transpose(1, 2, 0)
 
         # Plot the reconstructed image
         axs[i].imshow(img)

@@ -57,7 +57,7 @@ class CustomImageDataset(Dataset):
         #image_shape = image.shape
         count = self.image_info.iloc[idx, 5]
         ### Mask retrieval and processing
-        mask_path = img_path[:-4]+"_map.TIFF"
+        mask_path = img_path[:-4]+"_map.tiff"
         mask      = cv2.imread(mask_path,flags=cv2.IMREAD_ANYDEPTH)    
         mask = pre_process_mask(mask,count,self.threshold,self.re_scale)
         ### Apply transforms
