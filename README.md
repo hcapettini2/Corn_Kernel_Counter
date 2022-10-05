@@ -1,13 +1,6 @@
 # A Deep Learning Method for On-Ear Corn Kernel Counting
 ***
 
-<p align="center">
-    <img src="https://github.com/hcapettini2/Corn_Kernel_Counter/blob/main/Images/prediction_base.png" alt="Drawing" style="width: 500px"/>
-</p>
-
-
-
-
 
 ## Authors
 
@@ -22,3 +15,11 @@ Crop monitoring and yield estimation provide farmers with important information 
 * The complete report of this project can be found [**here**](https://github.com/hcapettini2/Corn_Kernel_Counter/blob/main/Report.pdf)
 
 * The presentation of this project can be found [**here**](https://github.com/hcapettini2/Corn_Kernel_Counter/blob/main/Presentation.pdf)
+
+<p align="center">
+    <img src="https://github.com/hcapettini2/Corn_Kernel_Counter/blob/main/Images/prediction_base.png" alt="Drawing" style="width: 500px"/>
+</p>
+
+
+
+
