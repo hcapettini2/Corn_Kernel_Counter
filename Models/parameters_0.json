@@ -1,1 +1,0 @@
-{"sigma": 12, "threshold": 0.0001, "re_scale": 100000.0, "pre_trained_model": "efficientnet-b1", "chosen_dataset": "corn", "max_epochs": 2, "learning_rate": 0.0001, "batch_size": 25, "index": 0, "img_size": [320, 320]}
